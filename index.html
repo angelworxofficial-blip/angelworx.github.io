@@ -20,7 +20,7 @@ html {
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #1a1a1a;
-  background: #4a7ba7;
+  background: #000;
   overflow-x: hidden;
 }
 
@@ -99,7 +99,6 @@ body {
   background: linear-gradient(to bottom, #5b9bd5, #87ceeb, #b0d9f5);
 }
 
-/* Animated CSS clouds */
 .cloud {
   position: absolute;
   background: rgba(255, 255, 255, 0.6);
@@ -260,7 +259,6 @@ body {
   to { left: 110%; }
 }
 
-/* Lighter overlay */
 .cloud-overlay {
   position: fixed;
   top: 0;
@@ -277,7 +275,6 @@ body {
   pointer-events: none;
 }
 
-/* Content wrapper */
 .content-wrapper {
   position: relative;
   z-index: 3;
@@ -287,7 +284,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  background: rgba(20,40,70,0.85);
+  background: rgba(20,40,70,0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
   z-index: 100;
@@ -311,14 +308,11 @@ header {
   margin: 0 auto;
   padding: 0 48px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -326,12 +320,21 @@ header {
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 101;
+}
+
 nav {
   display: flex;
   gap: 40px;
   align-items: center;
-  position: absolute;
-  right: 48px;
 }
 
 nav a {
@@ -340,7 +343,7 @@ nav a {
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
   text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
@@ -364,36 +367,18 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ---------------- BRAND LOGO SECTION ---------------- */
-.brand-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 48px 40px;
-  animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.brand-logo h1 {
-  font-size: clamp(4rem, 10vw, 8rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: #fff;
-  text-shadow: 0 6px 30px rgba(0,0,0,0.5);
-  text-transform: uppercase;
-}
-
 /* ---------------- HERO ---------------- */
 .hero {
-  min-height: 60vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 48px 120px;
+  padding: 120px 48px 80px;
   max-width: 1400px;
   margin: 0 auto;
-  animation: fadeInUp 1s ease-out 0.4s both;
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 @keyframes fadeInUp {
@@ -408,56 +393,59 @@ nav a:hover::after {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
   margin-bottom: 24px;
   letter-spacing: -0.04em;
   color: #fff;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  text-shadow: 0 6px 30px rgba(0,0,0,0.5);
+  text-transform: uppercase;
 }
 
 .hero p.tagline {
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   color: rgba(255,255,255,0.95);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   text-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
 .hero p.quote {
   font-style: italic;
   color: rgba(255,255,255,0.85);
-  font-size: 1rem;
+  font-size: 1.1rem;
   max-width: 600px;
   line-height: 1.6;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-/* ---------------- SECTIONS - CLEAR GLASS ---------------- */
+/* ---------------- SECTIONS ---------------- */
 section {
   padding: 120px 48px;
   max-width: 1400px;
-  margin: 0 auto;
-  animation: fadeInUp 0.8s ease-out both;
+  margin: 0 auto 40px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  margin-bottom: 40px;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-section:first-of-type {
-  margin-top: 0;
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 section h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  margin-bottom: 64px;
+  margin-bottom: 24px;
   font-weight: 800;
   letter-spacing: -0.03em;
   color: #fff;
@@ -465,39 +453,145 @@ section h2 {
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* ---------------- GALLERY ---------------- */
-.gallery {
+section p.section-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 64px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ---------------- ABOUT SECTION ---------------- */
+.about-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.gallery-item {
+.about-text h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 16px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.about-text p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.about-image {
   position: relative;
-  overflow: hidden;
   border-radius: 12px;
-  aspect-ratio: 16 / 10;
-  background: #f5f5f5;
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.gallery-item:hover {
-  transform: translateY(-8px);
+  overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
-.gallery img {
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------- PROJECTS SECTION ---------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #222;
+}
+
+.project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform 0.6s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 107, 53, 0.95);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-info {
+  padding: 32px;
+}
+
+.project-info h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.project-info p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+.meta-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
 }
 
 /* ---------------- SERVICES ---------------- */
@@ -577,40 +671,51 @@ footer {
 }
 
 /* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .header-inner {
     padding: 0 24px;
   }
 
-  nav {
-    position: static;
-    margin-top: 12px;
-    gap: 20px;
+  .menu-toggle {
+    display: block;
   }
 
-  .header-inner {
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    max-width: 300px;
+    background: rgba(20,40,70,0.98);
     flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+    padding: 40px;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+  }
+
+  nav.active {
+    right: 0;
   }
 
   nav a {
-    font-size: 0.9rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .brand-logo {
-    padding: 60px 24px 30px;
-  }
-
-  .brand-logo h1 {
-    font-size: 3rem;
+    font-size: 1.2rem;
+    padding: 12px 0;
   }
 
   .hero {
-    padding: 30px 24px 80px;
+    padding: 80px 24px 60px;
   }
 
   section {
@@ -618,36 +723,13 @@ footer {
     margin-bottom: 24px;
   }
 
-  section h2 {
-    margin-bottom: 48px;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
   .services {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
   .intro-logo h1 {
     font-size: 2.5rem;
   }
-}
-
-/* Stagger animations for sections */
-#work {
-  animation-delay: 0.1s;
-}
-
-#services {
-  animation-delay: 0.2s;
-}
-
-#contact {
-  animation-delay: 0.3s;
 }
 </style>
 </head>
@@ -663,7 +745,6 @@ footer {
 
 <!-- CLOUD BACKGROUND -->
 <div class="clouds-bg">
-  <!-- Multiple animated clouds -->
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
   <div class="cloud cloud3"></div>
@@ -682,38 +763,110 @@ footer {
       <div class="logo">
         <strong>AngelWorx</strong>
       </div>
-      <nav>
-        <a href="#work">Work</a>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav id="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- BRAND LOGO -->
-  <div class="brand-logo">
-    <h1>ANGELWORX</h1>
-  </div>
-
   <!-- HERO -->
   <div class="hero">
-    <h1>We don't chase.<br>We build.</h1>
+    <h1>AngelWorx</h1>
     <p class="tagline">Film. Animation. Culture.</p>
     <p class="quote">"Build in silence. Let the frame make the noise."</p>
   </div>
 
-  <!-- GALLERY -->
-  <section id="work">
-    <h2>Selected Work</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/DSC_0125.JPG.png" alt="AngelWorx work 1">
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About AngelWorx</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Leslie Jones</h3>
+        <p><strong>Founder & Producer</strong></p>
+        <p>AngelWorx is a South African film and animation production company dedicated to telling authentic stories that matter. Founded by Leslie Jones, we specialize in bringing powerful narratives to life through film, television, and animation.</p>
+        <p>Our mission is to create content that challenges perspectives, celebrates culture, and pushes creative boundaries.</p>
       </div>
-      <div class="gallery-item">
-        <img src="assets/DSC_0125.JPG.png" alt="AngelWorx work 2">
+      <div class="about-image">
+        <!-- Placeholder for founder photo - upload later -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 900;">LJ</div>
       </div>
-      <div class="gallery-item">
-        <img src="assets/DSC_0125.JPG.png" alt="AngelWorx work 3">
+    </div>
+  </section>
+
+  <!-- CURRENT PROJECTS -->
+  <section id="projects">
+    <h2>Current Projects</h2>
+    <p class="section-intro">We're currently in production on two groundbreaking projects that explore legacy, identity, and the complexities of modern South Africa.</p>
+    
+    <div class="projects-grid">
+      <!-- Project 1: Barnaby -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/work1.jpg" alt="Barnaby - Short Film">
+          <span class="project-badge">In Production</span>
+        </div>
+        <div class="project-info">
+          <h3>Barnaby</h3>
+          <p>A powerful short film exploring the dark intersections of legacy, wealth, and greed in contemporary South Africa.</p>
+          <div class="project-meta">
+            <div class="meta-item">
+              <div class="meta-icon"></div>
+              <span>Short Film</span>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon"></div>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Highveld Hustlers -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/work2.jpg" alt="Highveld Hustlers - TV Pilot">
+          <span class="project-badge">Development</span>
+        </div>
+        <div class="project-info">
+          <h3>Highveld Hustlers</h3>
+          <p>A gripping TV pilot about post-apartheid South Africa: two families—one white, one black—selling weed on the same turf, navigating tension, alliance, and survival.</p>
+          <div class="project-meta">
+            <div class="meta-item">
+              <div class="meta-icon"></div>
+              <span>TV Pilot</span>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon"></div>
+              <span>Drama Series</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Animation -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/work3.jpg" alt="Animation Services">
+          <span class="project-badge">Services</span>
+        </div>
+        <div class="project-info">
+          <h3>Animation</h3>
+          <p>From 2D character animation to 3D motion design, we bring stories to life through cutting-edge animation techniques and visual storytelling.</p>
+          <div class="project-meta">
+            <div class="meta-item">
+              <div class="meta-icon"></div>
+              <span>2D/3D Animation</span>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon"></div>
+              <span>Motion Design</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -724,26 +877,27 @@ footer {
     <div class="services">
       <div class="service">
         <h3>Film Production</h3>
-        <p>Short films, pilots, long-form storytelling.</p>
+        <p>Short films, pilots, long-form storytelling. We handle everything from concept to final cut.</p>
       </div>
       <div class="service">
         <h3>Animation</h3>
-        <p>2D / 3D animation, motion design, visual storytelling.</p>
+        <p>2D / 3D animation, motion design, visual storytelling that captivates and engages.</p>
       </div>
       <div class="service">
         <h3>Location Scouting</h3>
-        <p>Urban, rural, cinematic South African locations.</p>
+        <p>Urban, rural, cinematic South African locations. We know the landscape like no one else.</p>
       </div>
       <div class="service">
         <h3>Post Production</h3>
-        <p>Editing, sound, color, finishing.</p>
+        <p>Editing, sound design, color grading, and finishing that brings your vision to life.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Let's Work Together</h2>
+    <p class="section-intro">Ready to bring your story to life? Get in touch.</p>
     <div class="contact">
       <a href="https://youtube.com/@lesjones-tt2dy" target="_blank">YouTube</a>
       <a href="#" target="_blank">Instagram</a>
@@ -758,29 +912,56 @@ footer {
 </div>
 
 <script>
-// Check if this is the first visit
+// Intro Animation
 const hasVisited = sessionStorage.getItem('angelworx_visited');
 
 if (!hasVisited) {
-  // First visit - show intro animation
   const introAnimation = document.getElementById('introAnimation');
-  
-  // Hide intro after 2.5 seconds
   setTimeout(() => {
     introAnimation.classList.add('hidden');
-    
-    // Remove from DOM after animation completes
     setTimeout(() => {
       introAnimation.style.display = 'none';
     }, 800);
   }, 2500);
-  
-  // Mark as visited for this session
   sessionStorage.setItem('angelworx_visited', 'true');
 } else {
-  // Not first visit - hide intro immediately
   document.getElementById('introAnimation').style.display = 'none';
 }
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+});
+
+// Close menu when clicking a link
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+    menuToggle.textContent = '☰';
+  });
+});
+
+// Scroll Animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+  observer.observe(section);
+});
 </script>
 
 </body>
