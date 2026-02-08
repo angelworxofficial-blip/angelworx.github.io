@@ -1,1 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AngelWorx — Film & Production</title>
 
+<style>
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1a1a1a;
+  background: #4a7ba7;
+  overflow-x: hidden;
+}
+
+/* ---------------- LOADING ANIMATION ---------------- */
+.intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.intro-animation.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: logoReveal 2s ease-out;
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.intro-logo h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  animation: textFadeIn 1.5s ease-out 0.3s both;
+  color: #fff;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- ANIMATED CLOUD BACKGROUND ---------------- */
+.clouds-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #5b9bd5, #87ceeb, #b0d9f5);
+}
+
+/* Animated CSS clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 100px;
+  opacity: 0.7;
+  animation: float linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 100px;
+}
+
+.cloud1 {
+  width: 200px;
+  height: 60px;
+  top: 10%;
+  animation: float1 60s linear infinite;
+}
+.cloud1::before {
+  width: 100px;
+  height: 80px;
+  top: -40px;
+  left: 30px;
+}
+.cloud1::after {
+  width: 120px;
+  height: 70px;
+  top: -30px;
+  right: 30px;
+}
+
+.cloud2 {
+  width: 180px;
+  height: 50px;
+  top: 25%;
+  animation: float2 70s linear infinite;
+}
+.cloud2::before {
+  width: 90px;
+  height: 70px;
+  top: -35px;
+  left: 20px;
+}
+.cloud2::after {
+  width: 100px;
+  height: 60px;
+  top: -25px;
+  right: 20px;
+}
+
+.cloud3 {
+  width: 220px;
+  height: 70px;
+  top: 50%;
+  animation: float3 80s linear infinite;
+}
+.cloud3::before {
+  width: 110px;
+  height: 90px;
+  top: -45px;
+  left: 35px;
+}
+.cloud3::after {
+  width: 130px;
+  height: 80px;
+  top: -35px;
+  right: 35px;
+}
+
+.cloud4 {
+  width: 190px;
+  height: 55px;
+  top: 70%;
+  animation: float4 65s linear infinite;
+}
+.cloud4::before {
+  width: 95px;
+  height: 75px;
+  top: -38px;
+  left: 25px;
+}
+.cloud4::after {
+  width: 110px;
+  height: 65px;
+  top: -28px;
+  right: 25px;
+}
+
+.cloud5 {
+  width: 160px;
+  height: 45px;
+  top: 35%;
+  animation: float5 55s linear infinite;
+}
+.cloud5::before {
+  width: 80px;
+  height: 65px;
+  top: -32px;
+  left: 18px;
+}
+.cloud5::after {
+  width: 90px;
+  height: 55px;
+  top: -22px;
+  right: 18px;
+}
+
+.cloud6 {
+  width: 210px;
+  height: 65px;
+  top: 60%;
+  animation: float6 75s linear infinite;
+}
+.cloud6::before {
+  width: 105px;
+  height: 85px;
+  top: -42px;
+  left: 32px;
+}
+.cloud6::after {
+  width: 120px;
+  height: 75px;
+  top: -32px;
+  right: 32px;
+}
+
+@keyframes float1 {
+  from { left: -250px; }
+  to { left: 110%; }
+}
+
+@keyframes float2 {
+  from { left: -220px; }
+  to { left: 110%; }
+}
+
+@keyframes float3 {
+  from { left: -270px; }
+  to { left: 110%; }
+}
+
+@keyframes float4 {
+  from { left: -240px; }
+  to { left: 110%; }
+}
+
+@keyframes float5 {
+  from { left: -200px; }
+  to { left: 110%; }
+}
+
+@keyframes float6 {
+  from { left: -260px; }
+  to { left: 110%; }
+}
+
+/* Lighter overlay */
+.cloud-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(30,60,100,0.05) 0%,
+    rgba(40,70,110,0.03) 50%,
+    rgba(30,60,100,0.05) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(20,40,70,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 100;
+  padding: 20px 0;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  position: absolute;
+  right: 48px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------------- BRAND LOGO SECTION ---------------- */
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 48px 40px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.brand-logo h1 {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-shadow: 0 6px 30px rgba(0,0,0,0.5);
+  text-transform: uppercase;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 48px 120px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero p.tagline {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.hero p.quote {
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0 auto;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ---------------- SECTIONS - CLEAR GLASS ---------------- */
+section {
+  padding: 120px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out both;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+section:first-of-type {
+  margin-top: 0;
+}
+
+section h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 64px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* ---------------- GALLERY ---------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 10;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ---------------- SERVICES ---------------- */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+}
+
+.service {
+  border-left: 3px solid rgba(255, 255, 255, 0.8);
+  padding-left: 24px;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.service:hover {
+  transform: translateX(8px);
+}
+
+.service h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.service p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ---------------- CONTACT ---------------- */
+#contact {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  width: fit-content;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.contact a:hover {
+  border-bottom-color: #fff;
+  transform: translateX(8px);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  padding: 60px 48px 40px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0 24px;
+  }
+
+  nav {
+    position: static;
+    margin-top: 12px;
+    gap: 20px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .brand-logo {
+    padding: 60px 24px 30px;
+  }
+
+  .brand-logo h1 {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding: 30px 24px 80px;
+  }
+
+  section {
+    padding: 80px 24px;
+    margin-bottom: 24px;
+  }
+
+  section h2 {
+    margin-bottom: 48px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .intro-logo h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Stagger animations for sections */
+#work {
+  animation-delay: 0.1s;
+}
+
+#services {
+  animation-delay: 0.2s;
+}
+
+#contact {
+  animation-delay: 0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO ANIMATION -->
+<div class="intro-animation" id="introAnimation">
+  <div class="intro-logo">
+    <h1>AngelWorx</h1>
+  </div>
+</div>
+
+<!-- CLOUD BACKGROUND -->
+<div class="clouds-bg">
+  <!-- Multiple animated clouds -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="cloud cloud4"></div>
+  <div class="cloud cloud5"></div>
+  <div class="cloud cloud6"></div>
+</div>
+<div class="cloud-overlay"></div>
+
+<!-- CONTENT WRAPPER -->
+<div class="content-wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <strong>AngelWorx</strong>
+      </div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BRAND LOGO -->
+  <div class="brand-logo">
+    <h1>ANGELWORX</h1>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>We don't chase.<br>We build.</h1>
+    <p class="tagline">Film. Animation. Culture.</p>
+    <p class="quote">"Build in silence. Let the frame make the noise."</p>
+  </div>
+
+  <!-- GALLERY -->
+  <section id="work">
+    <h2>Selected Work</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/DSC_0125.JPG" alt="AngelWorx work 1">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/DSC_0125.JPG" alt="AngelWorx work 2">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/DSC_0125.JPG" alt="AngelWorx work 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>What We Do</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Film Production</h3>
+        <p>Short films, pilots, long-form storytelling.</p>
+      </div>
+      <div class="service">
+        <h3>Animation</h3>
+        <p>2D / 3D animation, motion design, visual storytelling.</p>
+      </div>
+      <div class="service">
+        <h3>Location Scouting</h3>
+        <p>Urban, rural, cinematic South African locations.</p>
+      </div>
+      <div class="service">
+        <h3>Post Production</h3>
+        <p>Editing, sound, color, finishing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="https://youtube.com/@lesjones-tt2dy" target="_blank">YouTube</a>
+      <a href="#" target="_blank">Instagram</a>
+      <a href="mailto:hello@angelworx.co">hello@angelworx.co</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 AngelWorx. All rights reserved.
+  </footer>
+
+</div>
+
+<script>
+// Check if this is the first visit
+const hasVisited = sessionStorage.getItem('angelworx_visited');
+
+if (!hasVisited) {
+  // First visit - show intro animation
+  const introAnimation = document.getElementById('introAnimation');
+  
+  // Hide intro after 2.5 seconds
+  setTimeout(() => {
+    introAnimation.classList.add('hidden');
+    
+    // Remove from DOM after animation completes
+    setTimeout(() => {
+      introAnimation.style.display = 'none';
+    }, 800);
+  }, 2500);
+  
+  // Mark as visited for this session
+  sessionStorage.setItem('angelworx_visited', 'true');
+} else {
+  // Not first visit - hide intro immediately
+  document.getElementById('introAnimation').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
