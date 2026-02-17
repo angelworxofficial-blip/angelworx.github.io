@@ -13,9 +13,7 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -26,10 +24,8 @@ body {
 /* ---------------- LOADING ANIMATION ---------------- */
 .intro-animation {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: linear-gradient(135deg, #ff6b35, #f7931e);
   z-index: 9999;
   display: flex;
@@ -74,10 +70,8 @@ body {
 /* ---------------- ANIMATED CLOUD BACKGROUND ---------------- */
 .clouds-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: 1;
   overflow: hidden;
   background: linear-gradient(to bottom, #5b9bd5, #87ceeb, #b0d9f5);
@@ -85,7 +79,7 @@ body {
 
 .cloud {
   position: absolute;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.7);
   border-radius: 100px;
   opacity: 0.8;
 }
@@ -94,7 +88,7 @@ body {
 .cloud::after {
   content: '';
   position: absolute;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.7);
   border-radius: 100px;
 }
 
@@ -152,7 +146,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  background: rgba(10, 25, 55, 0.92);
+  background: rgba(10,25,55,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.15);
   z-index: 100;
@@ -202,7 +196,7 @@ nav a {
   text-decoration: none;
   color: rgba(255,255,255,0.9);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: color 0.3s ease;
@@ -246,7 +240,6 @@ nav a:hover::after { width: 100%; }
   line-height: 1;
   margin-bottom: 24px;
   letter-spacing: -0.04em;
-  /* DARK NAVY - best practice over sky blue */
   color: #0a1a3a;
   text-shadow: 0 2px 20px rgba(255,255,255,0.4);
   text-transform: uppercase;
@@ -254,7 +247,6 @@ nav a:hover::after { width: 100%; }
 
 .hero p.tagline {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  /* Dark navy for readability over sky blue */
   color: #0d2148;
   margin-bottom: 16px;
   font-weight: 600;
@@ -277,13 +269,12 @@ section {
   padding: 100px 48px;
   max-width: 1400px;
   margin: 0 auto 40px;
-  /* Darker glass for better text contrast */
-  background: rgba(8, 20, 50, 0.55);
+  background: rgba(8,20,50,0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -304,7 +295,6 @@ section h2 {
   text-transform: uppercase;
 }
 
-/* Orange accent line under headings */
 section h2::after {
   content: '';
   display: block;
@@ -366,7 +356,7 @@ section p.section-intro {
   box-shadow: 0 25px 60px rgba(0,0,0,0.5);
   aspect-ratio: 3/4;
   background: linear-gradient(135deg, #0d2148, #1a3a6e);
-  border: 2px solid rgba(247, 147, 30, 0.3);
+  border: 2px solid rgba(247,147,30,0.3);
 }
 
 .about-image img {
@@ -378,9 +368,7 @@ section p.section-intro {
   transition: transform 0.6s ease;
 }
 
-.about-image:hover img {
-  transform: scale(1.05);
-}
+.about-image:hover img { transform: scale(1.05); }
 
 /* ---------------- PROJECTS SECTION ---------------- */
 .projects-grid {
@@ -390,10 +378,10 @@ section p.section-intro {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255,255,255,0.06);
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255,255,255,0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   cursor: pointer;
 }
@@ -419,14 +407,11 @@ section p.section-intro {
   transition: transform 0.6s ease;
 }
 
-.project-card:hover .project-image img {
-  transform: scale(1.08);
-}
+.project-card:hover .project-image img { transform: scale(1.08); }
 
 .project-badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 16px; right: 16px;
   background: #f7931e;
   color: #fff;
   padding: 6px 16px;
@@ -438,9 +423,7 @@ section p.section-intro {
   box-shadow: 0 4px 12px rgba(247,147,30,0.4);
 }
 
-.project-info {
-  padding: 28px;
-}
+.project-info { padding: 28px; }
 
 .project-info h3 {
   font-size: 1.6rem;
@@ -465,8 +448,8 @@ section p.section-intro {
 }
 
 .meta-tag {
-  background: rgba(247, 147, 30, 0.15);
-  border: 1px solid rgba(247, 147, 30, 0.4);
+  background: rgba(247,147,30,0.15);
+  border: 1px solid rgba(247,147,30,0.4);
   color: #f7931e;
   padding: 4px 12px;
   border-radius: 20px;
@@ -474,6 +457,431 @@ section p.section-intro {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+/* ============================================
+   GALLERY SECTION - INSTAGRAM STYLE
+   ============================================ */
+
+/* Gallery Filter Tabs */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #f7931e;
+  border-color: #f7931e;
+  color: #fff;
+}
+
+/* Upload Button */
+.gallery-upload-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #f7931e, #ff6b35);
+  color: #fff;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(247,147,30,0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(247,147,30,0.6);
+}
+
+/* Hidden file input */
+#galleryFileInput {
+  display: none;
+}
+
+/* Instagram-style Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #111;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover overlay */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* Like & Share buttons on hover */
+.gallery-actions {
+  display: flex;
+  gap: 24px;
+}
+
+.gallery-action-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, color 0.2s ease;
+  letter-spacing: 0.03em;
+}
+
+.gallery-action-btn:hover { transform: scale(1.2); }
+.gallery-action-btn.liked { color: #ff4b6e; }
+
+.gallery-action-btn span.icon {
+  font-size: 1.4rem;
+}
+
+/* Category badge on each photo */
+.gallery-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(247,147,30,0.9);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Delete button (only visible to admin) */
+.gallery-delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,50,50,0.85);
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.gallery-item:hover .gallery-delete-btn {
+  display: flex;
+}
+
+.gallery-delete-btn:hover { background: rgba(255,0,0,1); }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.lightbox-action-btn {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lightbox-action-btn:hover {
+  background: #f7931e;
+  border-color: #f7931e;
+}
+
+.lightbox-action-btn.liked {
+  background: #ff4b6e;
+  border-color: #ff4b6e;
+}
+
+/* Upload Modal */
+.upload-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.upload-modal.active {
+  display: flex;
+}
+
+.upload-modal-content {
+  background: rgba(8,20,50,0.98);
+  border: 2px solid rgba(247,147,30,0.4);
+  border-radius: 20px;
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.upload-modal-content h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.upload-modal-content p {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+.upload-drop-zone {
+  border: 3px dashed rgba(247,147,30,0.5);
+  border-radius: 16px;
+  padding: 48px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.upload-drop-zone:hover,
+.upload-drop-zone.drag-over {
+  border-color: #f7931e;
+  background: rgba(247,147,30,0.08);
+}
+
+.upload-drop-zone p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.upload-drop-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.upload-category-select {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+.upload-category-select option {
+  background: #0d2148;
+  color: #fff;
+}
+
+.upload-caption-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  outline: none;
+  font-family: inherit;
+}
+
+.upload-caption-input::placeholder { color: rgba(255,255,255,0.4); }
+.upload-category-select:focus,
+.upload-caption-input:focus {
+  border-color: #f7931e;
+}
+
+.upload-modal-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.upload-confirm-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #f7931e, #ff6b35);
+  border: none;
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.upload-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(247,147,30,0.4);
+}
+
+.upload-cancel-btn {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.upload-cancel-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* Image preview in modal */
+.upload-preview {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.upload-preview img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(247,147,30,0.4);
+}
+
+/* Empty gallery state */
+.gallery-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255,255,255,0.5);
+}
+
+.gallery-empty p {
+  font-size: 1.1rem;
+  margin-top: 16px;
 }
 
 /* ---------------- SERVICES ---------------- */
@@ -511,15 +919,13 @@ section p.section-intro {
 }
 
 .service p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.8);
   font-size: 0.95rem;
   line-height: 1.65;
 }
 
 /* ---------------- CONTACT ---------------- */
-#contact {
-  text-align: center;
-}
+#contact { text-align: center; }
 
 .contact-links {
   display: flex;
@@ -543,6 +949,7 @@ section p.section-intro {
   min-width: 220px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .contact-link:hover {
@@ -556,39 +963,29 @@ section p.section-intro {
 footer {
   padding: 48px 48px 32px;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.6);
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(8, 20, 50, 0.6);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: rgba(8,20,50,0.6);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   letter-spacing: 0.05em;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 968px) {
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+  .about-content { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .header-inner {
-    padding: 0 24px;
-  }
+  .header-inner { padding: 0 24px; }
 
-  .menu-toggle {
-    display: block;
-  }
+  .menu-toggle { display: block; }
 
   nav {
     position: fixed;
-    top: 0;
-    right: -100%;
+    top: 0; right: -100%;
     height: 100vh;
     width: 80%;
     max-width: 300px;
@@ -601,31 +998,24 @@ footer {
     gap: 24px;
   }
 
-  nav.active {
-    right: 0;
-  }
+  nav.active { right: 0; }
+  nav a { font-size: 1.2rem; padding: 12px 0; }
 
-  nav a {
-    font-size: 1.2rem;
-    padding: 12px 0;
-  }
-
-  .hero {
-    padding: 80px 24px 60px;
-  }
+  .hero { padding: 80px 24px 60px; }
 
   section {
     padding: 60px 24px;
     margin-bottom: 24px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .intro-logo h1 {
-    font-size: 2.5rem;
-  }
+  .upload-modal-content { padding: 32px 24px; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -636,6 +1026,60 @@ footer {
 <div class="intro-animation" id="introAnimation">
   <div class="intro-logo">
     <h1>AngelWorx</h1>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img src="" alt="" id="lightboxImg">
+    <div class="lightbox-actions">
+      <button class="lightbox-action-btn" id="lightboxLike">
+        ♡ <span id="lightboxLikeCount">0</span> Likes
+      </button>
+      <button class="lightbox-action-btn" id="lightboxShare">
+        ↗ Share
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- UPLOAD MODAL -->
+<div class="upload-modal" id="uploadModal">
+  <div class="upload-modal-content">
+    <h3>Upload Photo</h3>
+    <p>Add to the AngelWorx gallery</p>
+
+    <div class="upload-preview" id="uploadPreview">
+      <img src="" alt="Preview" id="uploadPreviewImg">
+    </div>
+
+    <div class="upload-drop-zone" id="uploadDropZone">
+      <span class="upload-drop-icon">📷</span>
+      <p>Click or drag & drop your photo here</p>
+      <input type="file" id="galleryFileInput" accept="image/*" multiple>
+    </div>
+
+    <select class="upload-category-select" id="uploadCategory">
+      <option value="all">📁 Select Category</option>
+      <option value="bts">🎬 Behind the Scenes</option>
+      <option value="stills">🎞️ Film Stills</option>
+      <option value="locations">📍 Locations</option>
+      <option value="team">👥 Team</option>
+    </select>
+
+    <input
+      type="text"
+      class="upload-caption-input"
+      id="uploadCaption"
+      placeholder="Add a caption (optional)..."
+    >
+
+    <div class="upload-modal-buttons">
+      <button class="upload-confirm-btn" id="uploadConfirmBtn">Upload Photo</button>
+      <button class="upload-cancel-btn" id="uploadCancelBtn">Cancel</button>
+    </div>
   </div>
 </div>
 
@@ -661,6 +1105,7 @@ footer {
       <nav id="nav">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -696,7 +1141,6 @@ footer {
     <p class="section-intro">Groundbreaking projects that explore legacy, identity, and the complexities of modern South Africa.</p>
     <div class="projects-grid">
 
-      <!-- Project 1: Barnaby -->
       <div class="project-card">
         <div class="project-image">
           <img src="assets/work1.jpg.png" alt="Barnaby - Short Film">
@@ -712,7 +1156,6 @@ footer {
         </div>
       </div>
 
-      <!-- Project 2: Highveld Hustlers -->
       <div class="project-card">
         <div class="project-image">
           <img src="assets/HH.jpg" alt="Highveld Hustlers - TV Pilot">
@@ -729,7 +1172,6 @@ footer {
         </div>
       </div>
 
-      <!-- Project 3: Animation -->
       <div class="project-card">
         <div class="project-image">
           <img src="assets/work3.jpg.png" alt="Animation Services">
@@ -745,6 +1187,86 @@ footer {
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p class="section-intro">Behind the scenes, film stills, locations and team moments from AngelWorx productions.</p>
+
+    <!-- Filter Tabs -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bts">Behind the Scenes</button>
+      <button class="filter-btn" data-filter="stills">Film Stills</button>
+      <button class="filter-btn" data-filter="locations">Locations</button>
+      <button class="filter-btn" data-filter="team">Team</button>
+    </div>
+
+    <!-- Upload Button -->
+    <div class="gallery-upload-area">
+      <button class="upload-btn" id="openUploadModal">
+        <span>📷</span> Add Photo
+      </button>
+    </div>
+
+    <!-- Instagram Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Default photos using existing assets -->
+      <div class="gallery-item" data-category="stills" data-id="1" data-likes="0">
+        <span class="gallery-category">Film Stills</span>
+        <img src="assets/HH.jpg" alt="Highveld Hustlers">
+        <div class="gallery-overlay">
+          <div class="gallery-actions">
+            <button class="gallery-action-btn like-btn" data-id="1">
+              <span class="icon">♡</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="gallery-action-btn share-btn" data-id="1">
+              <span class="icon">↗</span>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+        <button class="gallery-delete-btn" data-id="1">✕</button>
+      </div>
+
+      <div class="gallery-item" data-category="stills" data-id="2" data-likes="0">
+        <span class="gallery-category">Film Stills</span>
+        <img src="assets/work1.jpg.png" alt="Barnaby">
+        <div class="gallery-overlay">
+          <div class="gallery-actions">
+            <button class="gallery-action-btn like-btn" data-id="2">
+              <span class="icon">♡</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="gallery-action-btn share-btn" data-id="2">
+              <span class="icon">↗</span>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+        <button class="gallery-delete-btn" data-id="2">✕</button>
+      </div>
+
+      <div class="gallery-item" data-category="stills" data-id="3" data-likes="0">
+        <span class="gallery-category">Animation</span>
+        <img src="assets/work3.jpg.png" alt="Animation">
+        <div class="gallery-overlay">
+          <div class="gallery-actions">
+            <button class="gallery-action-btn like-btn" data-id="3">
+              <span class="icon">♡</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="gallery-action-btn share-btn" data-id="3">
+              <span class="icon">↗</span>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+        <button class="gallery-delete-btn" data-id="3">✕</button>
+      </div>
     </div>
   </section>
 
@@ -793,22 +1315,20 @@ footer {
 </div>
 
 <script>
-// Intro Animation - shows once per session
+// ============ INTRO ANIMATION ============
 const hasVisited = sessionStorage.getItem('angelworx_visited');
 if (!hasVisited) {
   const introAnimation = document.getElementById('introAnimation');
   setTimeout(() => {
     introAnimation.classList.add('hidden');
-    setTimeout(() => {
-      introAnimation.style.display = 'none';
-    }, 800);
+    setTimeout(() => { introAnimation.style.display = 'none'; }, 800);
   }, 2500);
   sessionStorage.setItem('angelworx_visited', 'true');
 } else {
   document.getElementById('introAnimation').style.display = 'none';
 }
 
-// Mobile Menu Toggle
+// ============ MOBILE MENU ============
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 
@@ -824,18 +1344,374 @@ nav.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Scroll Animations
+// ============ SCROLL ANIMATIONS ============
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-document.querySelectorAll('section').forEach(section => {
-  observer.observe(section);
+document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+// ============ GALLERY SYSTEM ============
+let galleryData = JSON.parse(localStorage.getItem('angelworx_gallery')) || [];
+let currentLightboxId = null;
+let nextId = 100;
+
+function saveGallery() {
+  localStorage.setItem('angelworx_gallery', JSON.stringify(galleryData));
+}
+
+function getLikes() {
+  return JSON.parse(localStorage.getItem('angelworx_likes')) || {};
+}
+
+function saveLikes(likes) {
+  localStorage.setItem('angelworx_likes', JSON.stringify(likes));
+}
+
+// Build gallery item HTML
+function createGalleryItem(item) {
+  const likes = getLikes();
+  const likeCount = likes[item.id] || item.likes || 0;
+  const isLiked = likes[`liked_${item.id}`] || false;
+
+  const div = document.createElement('div');
+  div.className = 'gallery-item';
+  div.setAttribute('data-category', item.category);
+  div.setAttribute('data-id', item.id);
+  div.setAttribute('data-likes', likeCount);
+
+  const categoryLabels = {
+    bts: 'Behind the Scenes',
+    stills: 'Film Stills',
+    locations: 'Locations',
+    team: 'Team',
+    all: 'AngelWorx'
+  };
+
+  div.innerHTML = `
+    <span class="gallery-category">${categoryLabels[item.category] || 'AngelWorx'}</span>
+    <img src="${item.src}" alt="${item.caption || 'AngelWorx'}">
+    <div class="gallery-overlay">
+      <div class="gallery-actions">
+        <button class="gallery-action-btn like-btn ${isLiked ? 'liked' : ''}" data-id="${item.id}">
+          <span class="icon">${isLiked ? '♥' : '♡'}</span>
+          <span class="like-count">${likeCount}</span>
+        </button>
+        <button class="gallery-action-btn share-btn" data-id="${item.id}">
+          <span class="icon">↗</span>
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+    <button class="gallery-delete-btn" data-id="${item.id}">✕</button>
+  `;
+
+  // Click to open lightbox
+  div.querySelector('img').addEventListener('click', () => openLightbox(item.id, item.src));
+
+  // Like button
+  div.querySelector('.like-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleLike(item.id, div);
+  });
+
+  // Share button
+  div.querySelector('.share-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    sharePhoto(item.src);
+  });
+
+  // Delete button
+  div.querySelector('.gallery-delete-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    deleteGalleryItem(item.id);
+  });
+
+  return div;
+}
+
+// Load uploaded photos into grid
+function loadUploadedPhotos() {
+  const grid = document.getElementById('galleryGrid');
+  // Remove previously appended items
+  grid.querySelectorAll('.uploaded-item').forEach(el => el.remove());
+
+  galleryData.forEach(item => {
+    const el = createGalleryItem(item);
+    el.classList.add('uploaded-item');
+    grid.appendChild(el);
+  });
+
+  bindDefaultLikeShare();
+}
+
+// Bind like/share on the default (hardcoded) items
+function bindDefaultLikeShare() {
+  document.querySelectorAll('.gallery-item:not(.uploaded-item) .like-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = btn.getAttribute('data-id');
+      toggleLike(id, btn.closest('.gallery-item'));
+    });
+  });
+
+  document.querySelectorAll('.gallery-item:not(.uploaded-item) .share-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const img = btn.closest('.gallery-item').querySelector('img');
+      sharePhoto(img ? img.src : window.location.href);
+    });
+  });
+
+  document.querySelectorAll('.gallery-item:not(.uploaded-item) .gallery-delete-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const item = btn.closest('.gallery-item');
+      if (confirm('Remove this photo from view?')) item.remove();
+    });
+  });
+
+  document.querySelectorAll('.gallery-item:not(.uploaded-item) img').forEach(img => {
+    img.addEventListener('click', () => {
+      openLightbox(null, img.src);
+    });
+  });
+}
+
+// Toggle like
+function toggleLike(id, itemEl) {
+  const likes = getLikes();
+  const likedKey = `liked_${id}`;
+  const isLiked = likes[likedKey] || false;
+  const current = parseInt(likes[id] || 0);
+
+  if (isLiked) {
+    likes[id] = Math.max(0, current - 1);
+    likes[likedKey] = false;
+  } else {
+    likes[id] = current + 1;
+    likes[likedKey] = true;
+  }
+
+  saveLikes(likes);
+
+  const likeBtn = itemEl.querySelector('.like-btn');
+  const countEl = itemEl.querySelector('.like-count');
+  const iconEl = likeBtn.querySelector('.icon');
+
+  if (!isLiked) {
+    likeBtn.classList.add('liked');
+    iconEl.textContent = '♥';
+  } else {
+    likeBtn.classList.remove('liked');
+    iconEl.textContent = '♡';
+  }
+  countEl.textContent = likes[id];
+}
+
+// Share photo
+function sharePhoto(src) {
+  if (navigator.share) {
+    navigator.share({
+      title: 'AngelWorx Production',
+      text: 'Check out this shot from AngelWorx 🎬',
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    // Fallback: copy URL to clipboard
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('Link copied to clipboard! Share it anywhere 🎬');
+    }).catch(() => {
+      alert('Share link: ' + window.location.href);
+    });
+  }
+}
+
+// Delete gallery item
+function deleteGalleryItem(id) {
+  if (!confirm('Remove this photo from the gallery?')) return;
+  galleryData = galleryData.filter(item => item.id != id);
+  saveGallery();
+  loadUploadedPhotos();
+}
+
+// Open Lightbox
+function openLightbox(id, src) {
+  currentLightboxId = id;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxLikeCount = document.getElementById('lightboxLikeCount');
+  const lightboxLikeBtn = document.getElementById('lightboxLike');
+
+  lightboxImg.src = src;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  if (id) {
+    const likes = getLikes();
+    const likeCount = likes[id] || 0;
+    const isLiked = likes[`liked_${id}`] || false;
+    lightboxLikeCount.textContent = likeCount;
+    lightboxLikeBtn.classList.toggle('liked', isLiked);
+    lightboxLikeBtn.innerHTML = `${isLiked ? '♥' : '♡'} <span id="lightboxLikeCount">${likeCount}</span> Likes`;
+  }
+}
+
+// Close Lightbox
+document.getElementById('lightboxClose').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+  currentLightboxId = null;
 });
+
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+document.getElementById('lightboxLike').addEventListener('click', () => {
+  if (!currentLightboxId) return;
+  const item = document.querySelector(`[data-id="${currentLightboxId}"]`);
+  if (item) toggleLike(currentLightboxId, item);
+  const likes = getLikes();
+  const likeCount = likes[currentLightboxId] || 0;
+  const isLiked = likes[`liked_${currentLightboxId}`] || false;
+  document.getElementById('lightboxLike').innerHTML = `${isLiked ? '♥' : '♡'} <span id="lightboxLikeCount">${likeCount}</span> Likes`;
+  document.getElementById('lightboxLike').classList.toggle('liked', isLiked);
+});
+
+document.getElementById('lightboxShare').addEventListener('click', () => {
+  sharePhoto(document.getElementById('lightboxImg').src);
+});
+
+// ============ GALLERY FILTERS ============
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      if (filter === 'all' || item.getAttribute('data-category') === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ============ UPLOAD SYSTEM ============
+const uploadModal = document.getElementById('uploadModal');
+const uploadDropZone = document.getElementById('uploadDropZone');
+const fileInput = document.getElementById('galleryFileInput');
+const uploadPreview = document.getElementById('uploadPreview');
+const uploadPreviewImg = document.getElementById('uploadPreviewImg');
+
+let selectedFile = null;
+
+// Open Upload Modal
+document.getElementById('openUploadModal').addEventListener('click', () => {
+  uploadModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
+
+// Cancel Upload
+document.getElementById('uploadCancelBtn').addEventListener('click', () => {
+  closeUploadModal();
+});
+
+function closeUploadModal() {
+  uploadModal.classList.remove('active');
+  document.body.style.overflow = '';
+  uploadPreview.style.display = 'none';
+  uploadPreviewImg.src = '';
+  fileInput.value = '';
+  document.getElementById('uploadCaption').value = '';
+  document.getElementById('uploadCategory').value = 'all';
+  selectedFile = null;
+}
+
+// Click drop zone to open file picker
+uploadDropZone.addEventListener('click', () => fileInput.click());
+
+// File selected
+fileInput.addEventListener('change', (e) => {
+  const files = e.target.files;
+  if (files && files[0]) {
+    handleFileSelect(files[0]);
+  }
+});
+
+function handleFileSelect(file) {
+  if (!file.type.startsWith('image/')) {
+    alert('Please select an image file!');
+    return;
+  }
+  selectedFile = file;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    uploadPreviewImg.src = e.target.result;
+    uploadPreview.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+// Drag and drop
+uploadDropZone.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  uploadDropZone.classList.add('drag-over');
+});
+
+uploadDropZone.addEventListener('dragleave', () => {
+  uploadDropZone.classList.remove('drag-over');
+});
+
+uploadDropZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  uploadDropZone.classList.remove('drag-over');
+  const files = e.dataTransfer.files;
+  if (files && files[0]) handleFileSelect(files[0]);
+});
+
+// Confirm Upload
+document.getElementById('uploadConfirmBtn').addEventListener('click', () => {
+  if (!selectedFile) {
+    alert('Please select a photo first!');
+    return;
+  }
+
+  const category = document.getElementById('uploadCategory').value;
+  const caption = document.getElementById('uploadCaption').value;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const newItem = {
+      id: nextId++,
+      src: e.target.result,
+      category: category,
+      caption: caption,
+      likes: 0,
+      date: new Date().toISOString()
+    };
+
+    galleryData.push(newItem);
+    saveGallery();
+    loadUploadedPhotos();
+    closeUploadModal();
+
+    // Scroll to gallery
+    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+  };
+  reader.readAsDataURL(selectedFile);
+});
+
+// ============ INIT ============
+loadUploadedPhotos();
 </script>
 
 </body>
