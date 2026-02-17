@@ -19,7 +19,6 @@ html {
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #1a1a1a;
   background: #000;
   overflow-x: hidden;
 }
@@ -54,18 +53,9 @@ body {
 }
 
 @keyframes logoReveal {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 .intro-logo h1 {
@@ -77,14 +67,8 @@ body {
 }
 
 @keyframes textFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------------- ANIMATED CLOUD BACKGROUND ---------------- */
@@ -101,175 +85,59 @@ body {
 
 .cloud {
   position: absolute;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 100px;
-  opacity: 0.7;
-  animation: float linear infinite;
+  opacity: 0.8;
 }
 
 .cloud::before,
 .cloud::after {
   content: '';
   position: absolute;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 100px;
 }
 
-.cloud1 {
-  width: 200px;
-  height: 60px;
-  top: 10%;
-  animation: float1 60s linear infinite;
-}
-.cloud1::before {
-  width: 100px;
-  height: 80px;
-  top: -40px;
-  left: 30px;
-}
-.cloud1::after {
-  width: 120px;
-  height: 70px;
-  top: -30px;
-  right: 30px;
-}
+.cloud1 { width: 200px; height: 60px; top: 10%; animation: float1 60s linear infinite; }
+.cloud1::before { width: 100px; height: 80px; top: -40px; left: 30px; }
+.cloud1::after { width: 120px; height: 70px; top: -30px; right: 30px; }
 
-.cloud2 {
-  width: 180px;
-  height: 50px;
-  top: 25%;
-  animation: float2 70s linear infinite;
-}
-.cloud2::before {
-  width: 90px;
-  height: 70px;
-  top: -35px;
-  left: 20px;
-}
-.cloud2::after {
-  width: 100px;
-  height: 60px;
-  top: -25px;
-  right: 20px;
-}
+.cloud2 { width: 180px; height: 50px; top: 25%; animation: float2 70s linear infinite; }
+.cloud2::before { width: 90px; height: 70px; top: -35px; left: 20px; }
+.cloud2::after { width: 100px; height: 60px; top: -25px; right: 20px; }
 
-.cloud3 {
-  width: 220px;
-  height: 70px;
-  top: 50%;
-  animation: float3 80s linear infinite;
-}
-.cloud3::before {
-  width: 110px;
-  height: 90px;
-  top: -45px;
-  left: 35px;
-}
-.cloud3::after {
-  width: 130px;
-  height: 80px;
-  top: -35px;
-  right: 35px;
-}
+.cloud3 { width: 220px; height: 70px; top: 50%; animation: float3 80s linear infinite; }
+.cloud3::before { width: 110px; height: 90px; top: -45px; left: 35px; }
+.cloud3::after { width: 130px; height: 80px; top: -35px; right: 35px; }
 
-.cloud4 {
-  width: 190px;
-  height: 55px;
-  top: 70%;
-  animation: float4 65s linear infinite;
-}
-.cloud4::before {
-  width: 95px;
-  height: 75px;
-  top: -38px;
-  left: 25px;
-}
-.cloud4::after {
-  width: 110px;
-  height: 65px;
-  top: -28px;
-  right: 25px;
-}
+.cloud4 { width: 190px; height: 55px; top: 70%; animation: float4 65s linear infinite; }
+.cloud4::before { width: 95px; height: 75px; top: -38px; left: 25px; }
+.cloud4::after { width: 110px; height: 65px; top: -28px; right: 25px; }
 
-.cloud5 {
-  width: 160px;
-  height: 45px;
-  top: 35%;
-  animation: float5 55s linear infinite;
-}
-.cloud5::before {
-  width: 80px;
-  height: 65px;
-  top: -32px;
-  left: 18px;
-}
-.cloud5::after {
-  width: 90px;
-  height: 55px;
-  top: -22px;
-  right: 18px;
-}
+.cloud5 { width: 160px; height: 45px; top: 35%; animation: float5 55s linear infinite; }
+.cloud5::before { width: 80px; height: 65px; top: -32px; left: 18px; }
+.cloud5::after { width: 90px; height: 55px; top: -22px; right: 18px; }
 
-.cloud6 {
-  width: 210px;
-  height: 65px;
-  top: 60%;
-  animation: float6 75s linear infinite;
-}
-.cloud6::before {
-  width: 105px;
-  height: 85px;
-  top: -42px;
-  left: 32px;
-}
-.cloud6::after {
-  width: 120px;
-  height: 75px;
-  top: -32px;
-  right: 32px;
-}
+.cloud6 { width: 210px; height: 65px; top: 60%; animation: float6 75s linear infinite; }
+.cloud6::before { width: 105px; height: 85px; top: -42px; left: 32px; }
+.cloud6::after { width: 120px; height: 75px; top: -32px; right: 32px; }
 
-@keyframes float1 {
-  from { left: -250px; }
-  to { left: 110%; }
-}
-
-@keyframes float2 {
-  from { left: -220px; }
-  to { left: 110%; }
-}
-
-@keyframes float3 {
-  from { left: -270px; }
-  to { left: 110%; }
-}
-
-@keyframes float4 {
-  from { left: -240px; }
-  to { left: 110%; }
-}
-
-@keyframes float5 {
-  from { left: -200px; }
-  to { left: 110%; }
-}
-
-@keyframes float6 {
-  from { left: -260px; }
-  to { left: 110%; }
-}
+@keyframes float1 { from { left: -250px; } to { left: 110%; } }
+@keyframes float2 { from { left: -220px; } to { left: 110%; } }
+@keyframes float3 { from { left: -270px; } to { left: 110%; } }
+@keyframes float4 { from { left: -240px; } to { left: 110%; } }
+@keyframes float5 { from { left: -200px; } to { left: 110%; } }
+@keyframes float6 { from { left: -260px; } to { left: 110%; } }
 
 .cloud-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(30,60,100,0.05) 0%,
-    rgba(40,70,110,0.03) 50%,
-    rgba(30,60,100,0.05) 100%
+    rgba(10,30,60,0.08) 0%,
+    rgba(10,30,60,0.04) 50%,
+    rgba(10,30,60,0.08) 100%
   );
   z-index: 2;
   pointer-events: none;
@@ -284,23 +152,17 @@ body {
 header {
   position: sticky;
   top: 0;
-  background: rgba(20,40,70,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: rgba(10, 25, 55, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   z-index: 100;
-  padding: 20px 0;
+  padding: 18px 0;
   animation: slideDown 0.6s ease-out;
 }
 
 @keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .header-inner {
@@ -317,10 +179,9 @@ header {
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #fff;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
-/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   background: none;
@@ -340,36 +201,29 @@ nav {
 nav a {
   text-decoration: none;
   color: rgba(255,255,255,0.9);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   transition: color 0.3s ease;
   position: relative;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 nav a::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #fff;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: #f7931e;
   transition: width 0.3s ease;
 }
 
-nav a:hover {
-  color: #fff;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
+nav a:hover { color: #f7931e; }
+nav a:hover::after { width: 100%; }
 
 /* ---------------- HERO ---------------- */
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -382,14 +236,8 @@ nav a:hover::after {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero h1 {
@@ -398,41 +246,44 @@ nav a:hover::after {
   line-height: 1;
   margin-bottom: 24px;
   letter-spacing: -0.04em;
-  color: #fff;
-  text-shadow: 0 6px 30px rgba(0,0,0,0.5);
+  /* DARK NAVY - best practice over sky blue */
+  color: #0a1a3a;
+  text-shadow: 0 2px 20px rgba(255,255,255,0.4);
   text-transform: uppercase;
 }
 
 .hero p.tagline {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  color: rgba(255,255,255,0.95);
+  /* Dark navy for readability over sky blue */
+  color: #0d2148;
   margin-bottom: 16px;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero p.quote {
   font-style: italic;
-  color: rgba(255,255,255,0.85);
-  font-size: 1.1rem;
+  color: #1a3060;
+  font-size: 1.15rem;
   max-width: 600px;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0 auto 40px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  font-weight: 500;
 }
 
 /* ---------------- SECTIONS ---------------- */
 section {
-  padding: 120px 48px;
+  padding: 100px 48px;
   max-width: 1400px;
   margin: 0 auto 40px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* Darker glass for better text contrast */
+  background: rgba(8, 20, 50, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -444,24 +295,35 @@ section.visible {
 }
 
 section h2 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  margin-bottom: 24px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 16px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
   color: #fff;
   text-align: center;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+}
+
+/* Orange accent line under headings */
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #f7931e;
+  margin: 16px auto 40px;
+  border-radius: 2px;
 }
 
 section p.section-intro {
   text-align: center;
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 64px;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 60px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ---------------- ABOUT SECTION ---------------- */
@@ -473,162 +335,185 @@ section p.section-intro {
 }
 
 .about-text h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #fff;
-  margin-bottom: 16px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  margin-bottom: 8px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.about-text .role {
+  color: #f7931e;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: block;
 }
 
 .about-text p {
-  color: rgba(255,255,255,0.9);
-  font-size: 1.1rem;
-  line-height: 1.8;
+  color: rgba(255,255,255,0.88);
+  font-size: 1.05rem;
+  line-height: 1.85;
   margin-bottom: 16px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .about-image {
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
   aspect-ratio: 3/4;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0d2148, #1a3a6e);
+  border: 2px solid rgba(247, 147, 30, 0.3);
 }
 
 .about-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
 }
 
 /* ---------------- PROJECTS SECTION ---------------- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 36px;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   cursor: pointer;
 }
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.4);
-  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+  border-color: #f7931e;
 }
 
 .project-image {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background: #222;
+  aspect-ratio: 2/3;
+  background: #111;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.6s ease;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .project-badge {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: rgba(255, 107, 53, 0.95);
+  background: #f7931e;
   color: #fff;
   padding: 6px 16px;
   border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 12px rgba(247,147,30,0.4);
 }
 
 .project-info {
-  padding: 32px;
+  padding: 28px;
 }
 
 .project-info h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #fff;
-  margin-bottom: 12px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .project-info p {
-  color: rgba(255,255,255,0.85);
-  font-size: 1rem;
-  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  line-height: 1.65;
   margin-bottom: 16px;
 }
 
 .project-meta {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.9rem;
-}
-
-.meta-icon {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
+.meta-tag {
+  background: rgba(247, 147, 30, 0.15);
+  border: 1px solid rgba(247, 147, 30, 0.4);
+  color: #f7931e;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ---------------- SERVICES ---------------- */
-.services {
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmin(280px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
 }
 
 .service {
-  border-left: 3px solid rgba(255, 255, 255, 0.8);
-  padding-left: 24px;
-  transition: transform 0.3s ease;
-  text-align: left;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 32px 28px;
+  border-left: 4px solid #f7931e;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .service:hover {
-  transform: translateX(8px);
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
 }
 
 .service h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
   color: #fff;
   letter-spacing: -0.01em;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 .service p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  line-height: 1.6;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 /* ---------------- CONTACT ---------------- */
@@ -636,41 +521,48 @@ section p.section-intro {
   text-align: center;
 }
 
-.contact {
+.contact-links {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
+  margin-top: 20px;
 }
 
-.contact a {
+.contact-link {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
-  padding: 12px 0;
-  border-bottom: 2px solid transparent;
+  padding: 14px 40px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
   display: inline-block;
   width: fit-content;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  min-width: 220px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.contact a:hover {
-  border-bottom-color: #fff;
-  transform: translateX(8px);
+.contact-link:hover {
+  background: #f7931e;
+  border-color: #f7931e;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(247,147,30,0.4);
 }
 
 /* ---------------- FOOTER ---------------- */
 footer {
-  padding: 60px 48px 40px;
+  padding: 48px 48px 32px;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 20, 50, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  letter-spacing: 0.05em;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
@@ -700,12 +592,13 @@ footer {
     height: 100vh;
     width: 80%;
     max-width: 300px;
-    background: rgba(20,40,70,0.98);
+    background: rgba(8,20,50,0.98);
     flex-direction: column;
     justify-content: center;
     padding: 40px;
     transition: right 0.4s ease;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    box-shadow: -5px 0 30px rgba(0,0,0,0.5);
+    gap: 24px;
   }
 
   nav.active {
@@ -722,11 +615,11 @@ footer {
   }
 
   section {
-    padding: 80px 24px;
+    padding: 60px 24px;
     margin-bottom: 24px;
   }
 
-  .services {
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
@@ -763,9 +656,7 @@ footer {
   <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <div class="logo">
-        <strong>AngelWorx</strong>
-      </div>
+      <div class="logo"><strong>AngelWorx</strong></div>
       <button class="menu-toggle" id="menuToggle">☰</button>
       <nav id="nav">
         <a href="#about">About</a>
@@ -789,9 +680,9 @@ footer {
     <div class="about-content">
       <div class="about-text">
         <h3>Leslie Jones</h3>
-        <p><strong>Founder & Producer</strong></p>
+        <span class="role">Founder & Producer</span>
         <p>AngelWorx is a South African film and animation production company dedicated to telling authentic stories that matter. Founded by Leslie Jones, we specialize in bringing powerful narratives to life through film, television, and animation.</p>
-        <p>Our mission is to create content that challenges perspectives, celebrates culture, and pushes creative boundaries.</p>
+        <p>Our mission is to create content that challenges perspectives, celebrates culture, and pushes creative boundaries — stories only we can tell.</p>
       </div>
       <div class="about-image">
         <img src="assets/founder.jpg.jpg" alt="Leslie Jones - Founder & Producer">
@@ -802,9 +693,9 @@ footer {
   <!-- CURRENT PROJECTS -->
   <section id="projects">
     <h2>Current Projects</h2>
-    <p class="section-intro">We're currently in production on two groundbreaking projects that explore legacy, identity, and the complexities of modern South Africa.</p>
-    
+    <p class="section-intro">Groundbreaking projects that explore legacy, identity, and the complexities of modern South Africa.</p>
     <div class="projects-grid">
+
       <!-- Project 1: Barnaby -->
       <div class="project-card">
         <div class="project-image">
@@ -815,14 +706,8 @@ footer {
           <h3>Barnaby</h3>
           <p>A powerful short film exploring the dark intersections of legacy, wealth, and greed in contemporary South Africa.</p>
           <div class="project-meta">
-            <div class="meta-item">
-              <div class="meta-icon"></div>
-              <span>Short Film</span>
-            </div>
-            <div class="meta-item">
-              <div class="meta-icon"></div>
-              <span>2026</span>
-            </div>
+            <span class="meta-tag">Short Film</span>
+            <span class="meta-tag">2026</span>
           </div>
         </div>
       </div>
@@ -830,21 +715,16 @@ footer {
       <!-- Project 2: Highveld Hustlers -->
       <div class="project-card">
         <div class="project-image">
-          <img src="assets/work2.jpg.png" alt="Highveld Hustlers - TV Pilot">
-          <span class="project-badge">Development</span>
+          <img src="assets/HH.jpg" alt="Highveld Hustlers - TV Pilot">
+          <span class="project-badge">In Production</span>
         </div>
         <div class="project-info">
           <h3>Highveld Hustlers</h3>
-          <p>A gripping TV pilot about post-apartheid South Africa: two families—one white, one black—selling weed on the same turf, navigating tension, alliance, and survival.</p>
+          <p>A gripping TV pilot about post-apartheid South Africa: two families — one white, one black — selling weed on the same turf, navigating tension, alliance, and survival.</p>
           <div class="project-meta">
-            <div class="meta-item">
-              <div class="meta-icon"></div>
-              <span>TV Pilot</span>
-            </div>
-            <div class="meta-item">
-              <div class="meta-icon"></div>
-              <span>Drama Series</span>
-            </div>
+            <span class="meta-tag">TV Pilot</span>
+            <span class="meta-tag">Drama Series</span>
+            <span class="meta-tag">2026</span>
           </div>
         </div>
       </div>
@@ -857,39 +737,38 @@ footer {
         </div>
         <div class="project-info">
           <h3>Animation</h3>
-          <p>From 2D character animation to 3D motion design, we bring stories to life through cutting-edge animation techniques and visual storytelling.</p>
+          <p>From 2D character animation to 3D motion design, we bring stories to life through cutting-edge animation and visual storytelling.</p>
           <div class="project-meta">
-            <div class="meta-item">
-              <div class="meta-icon"></div>
-              <span>2D/3D Animation</span>
-            </div>
-            <div class="meta-item">
-              <div class="meta-icon"></div>
-              <span>Motion Design</span>
-            </div>
+            <span class="meta-tag">2D/3D</span>
+            <span class="meta-tag">Motion Design</span>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
     <h2>What We Do</h2>
-    <div class="services">
+    <div class="services-grid">
       <div class="service">
+        <span class="service-icon">🎬</span>
         <h3>Film Production</h3>
         <p>Short films, pilots, long-form storytelling. We handle everything from concept to final cut.</p>
       </div>
       <div class="service">
+        <span class="service-icon">✏️</span>
         <h3>Animation</h3>
-        <p>2D / 3D animation, motion design, visual storytelling that captivates and engages.</p>
+        <p>2D / 3D animation, motion design, visual storytelling that captivates and engages audiences.</p>
       </div>
       <div class="service">
+        <span class="service-icon">📍</span>
         <h3>Location Scouting</h3>
         <p>Urban, rural, cinematic South African locations. We know the landscape like no one else.</p>
       </div>
       <div class="service">
+        <span class="service-icon">🎞️</span>
         <h3>Post Production</h3>
         <p>Editing, sound design, color grading, and finishing that brings your vision to life.</p>
       </div>
@@ -899,24 +778,23 @@ footer {
   <!-- CONTACT -->
   <section id="contact">
     <h2>Let's Work Together</h2>
-    <p class="section-intro">Ready to bring your story to life? Get in touch.</p>
-    <div class="contact">
-      <a href="https://youtube.com/@lesjones-tt2dy" target="_blank">YouTube</a>
-      <a href="#" target="_blank">Instagram</a>
-      <a href="mailto:hello@angelworx.co">hello@angelworx.co</a>
+    <p class="section-intro">Ready to bring your story to life? Get in touch with us today.</p>
+    <div class="contact-links">
+      <a href="https://youtube.com/@lesjones-tt2dy" target="_blank" class="contact-link">YouTube</a>
+      <a href="#" target="_blank" class="contact-link">Instagram</a>
+      <a href="mailto:hello@angelworx.co" class="contact-link">hello@angelworx.co</a>
     </div>
   </section>
 
   <footer>
-    © 2026 AngelWorx. All rights reserved.
+    © 2026 AngelWorx. All rights reserved. Built in silence. 🎬
   </footer>
 
 </div>
 
 <script>
-// Intro Animation
+// Intro Animation - shows once per session
 const hasVisited = sessionStorage.getItem('angelworx_visited');
-
 if (!hasVisited) {
   const introAnimation = document.getElementById('introAnimation');
   setTimeout(() => {
@@ -939,7 +817,6 @@ menuToggle.addEventListener('click', () => {
   menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
 });
 
-// Close menu when clicking a link
 nav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('active');
@@ -948,18 +825,13 @@ nav.querySelectorAll('a').forEach(link => {
 });
 
 // Scroll Animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -100px 0px'
-};
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
-}, observerOptions);
+}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
 document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
